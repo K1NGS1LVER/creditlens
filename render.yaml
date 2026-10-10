@@ -1,8 +1,8 @@
 services:
   - type: web
-    name: neostats-credit-risk
+    name: creditlens-credit-risk
     runtime: docker
-    repo: https://github.com/K1NGS1LVER/neostats_credit_fraud_eval
+    repo: https://github.com/<your-username>/creditlens.git
     plan: free
     region: oregon
     branch: main

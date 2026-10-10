@@ -1,5 +1,5 @@
 """
-Unit tests for NeoStats Credit Risk Intelligence Rules Derivation Engine
+Unit tests for CreditLens Credit Risk Intelligence Rules Derivation Engine
 (Surrogate Rules Parsing, Tier Filtering, Condition Evaluation, Metrics)
 """
 

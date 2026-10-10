@@ -1,5 +1,5 @@
 """
-NeoStats Credit Risk Intelligence Platform - Rules Engine Package
+CreditLens Credit Risk Intelligence Platform - Rules Engine Package
 """
 
 from src.rules.derivation import (

@@ -1,5 +1,5 @@
 """
-NeoStats Talk-to-Data Conversational Analytics Package.
+CreditLens Talk-to-Data Conversational Analytics Package.
 
 Exposes production components for:
 - Token-Bucket Rate Limiting (rate_limiter)

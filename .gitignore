@@ -1,5 +1,5 @@
 # =============================================================================
-# NeoStats Credit Risk Intelligence Platform - Production .gitignore
+# CreditLens Credit Risk Intelligence Platform - Production .gitignore
 # =============================================================================
 
 # 1. Environment Variables & Secret Credentials (NEVER COMMIT)

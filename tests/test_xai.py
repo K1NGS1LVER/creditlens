@@ -1,5 +1,5 @@
 """
-Unit tests for NeoStats Credit Risk Intelligence XAI Engine
+Unit tests for CreditLens Credit Risk Intelligence XAI Engine
 (EBM Glassbox, LightGBM TreeSHAP Waterfall, Global Importance, Adverse Action Notices)
 """
 

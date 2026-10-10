@@ -19,10 +19,10 @@ def create_notebook():
     cells = []
 
     # Title & Markdown
-    cells.append(nbf.v4.new_markdown_cell("""# NeoStats Credit Risk Intelligence Platform
+    cells.append(nbf.v4.new_markdown_cell("""# CreditLens Credit Risk Intelligence Platform
 ## Exploratory Data Analysis, Glassbox (EBM) & Blackbox (LightGBM + SHAP) Modeling
 
-**Candidate Assignment: AI Engineer Role**  
+**Credit Risk Intelligence Platform - AI/ML Proof of Concept**  
 *Dataset: Home Credit Default Risk (Stratified Banking Benchmark)*  
 
 ---

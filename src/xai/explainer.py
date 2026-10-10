@@ -1,5 +1,5 @@
 """
-NeoStats Credit Risk Intelligence Platform - Explainable AI (XAI) Engine
+CreditLens Credit Risk Intelligence Platform - Explainable AI (XAI) Engine
 Provides dual explainability for credit risk decisions:
 1. Glassbox Explainable Boosting Machine (EBM / GA2M): Exact additive feature contributions
    to default log-odds with zero approximation error.

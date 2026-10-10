@@ -1,5 +1,5 @@
 """
-Talk-to-Data Production Orchestrator Agent for NeoStats Credit Risk Intelligence Platform.
+Talk-to-Data Production Orchestrator Agent for CreditLens Credit Risk Intelligence Platform.
 
 Coordinates the end-to-end conversational analytics pipeline:
 1. Natural language question ingestion

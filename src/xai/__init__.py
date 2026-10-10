@@ -1,5 +1,5 @@
 """
-NeoStats Credit Risk Intelligence Platform - Explainable AI (XAI) Package
+CreditLens Credit Risk Intelligence Platform - Explainable AI (XAI) Package
 """
 
 from src.xai.explainer import (

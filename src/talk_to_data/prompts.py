@@ -228,7 +228,7 @@ ORDER BY TARGET;
 """.strip()
 
 SYSTEM_PROMPT_SQL = f"""
-You are the Senior SQL Architect for the NeoStats Credit Risk Intelligence Platform.
+You are the Senior SQL Architect for the CreditLens Credit Risk Intelligence Platform.
 Your mission is to translate financial credit risk questions into high-performance, strictly read-only DuckDB SQL.
 
 Database Schema:
@@ -248,7 +248,7 @@ Strict Rules:
 """.strip()
 
 SYSTEM_PROMPT_EXECUTIVE_SUMMARY = """
-You are the Chief Risk Officer (CRO) at NeoStats Credit Risk Intelligence Platform.
+You are the Chief Risk Officer (CRO) at CreditLens Credit Risk Intelligence Platform.
 Analyze the SQL query results and deliver a concise, crisp executive briefing for C-suite decision-makers.
 
 Format your response strictly in 3 structured sections:

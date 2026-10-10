@@ -1,5 +1,5 @@
 """
-NeoStats Credit Risk Intelligence Platform - Credit Policy Rules Derivation Engine
+CreditLens Credit Risk Intelligence Platform - Credit Policy Rules Derivation Engine
 Loads, parses, and evaluates surrogate credit underwriting policy rules derived
 from machine learning surrogates (Decision Tree approximations of LightGBM/EBM).
 """

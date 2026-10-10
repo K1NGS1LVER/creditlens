@@ -1,6 +1,6 @@
 """
 Generates the executive case study slide deck PDF:
-documents/NeoStats_Credit_Risk.pdf
+documents/CreditLens_Credit_Risk.pdf
 Using WeasyPrint with high-resolution HTML/CSS styling.
 """
 
@@ -13,7 +13,7 @@ def generate_pdf():
     <html>
     <head>
         <meta charset="utf-8">
-        <title>NeoStats AI Credit Risk Intelligence Platform</title>
+        <title>CreditLens AI Credit Risk Intelligence Platform</title>
         <style>
             @page {
                 size: 11in 6.1875in; /* 16:9 widescreen presentation */
@@ -182,11 +182,11 @@ def generate_pdf():
 
         <!-- SLIDE 1: Title Slide -->
         <div class="slide title-slide">
-            <div class="title-tag">NeoStats AI Engineer Candidate Assessment</div>
+            <div class="title-tag">CreditLens AI Credit Risk Intelligence Platform</div>
             <div class="title-h1">AI-Powered Credit Risk<br>Intelligence Platform</div>
             <div class="title-sub">End-to-End Autonomous Credit Scoring, Clearbox XAI (EBM & TreeSHAP), AST-Guarded Talk-to-Data & Single-Command Deployment</div>
             <div class="author-box">
-                Candidate: <span>Daniel Paul</span> | Platform Assessment: <span>NeoStats</span> | Tech: <span>Python 3.11, EBM, LightGBM, Groq, Ollama, DuckDB, Streamlit, Docker</span>
+                Candidate: <span>Your Name</span> | Platform Assessment: <span>CreditLens</span> | Tech: <span>Python 3.11, EBM, LightGBM, Groq, Ollama, DuckDB, Streamlit, Docker</span>
             </div>
         </div>
 
@@ -224,7 +224,7 @@ def generate_pdf():
                     </div>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
         <!-- SLIDE 3: System Architecture -->
@@ -259,7 +259,7 @@ def generate_pdf():
                     </ul>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
         <!-- SLIDE 4: Exploratory Data Analysis -->
@@ -286,7 +286,7 @@ def generate_pdf():
                     </ul>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
         <!-- SLIDE 5: Machine Learning & Calibration -->
@@ -322,7 +322,7 @@ def generate_pdf():
                     </ul>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
         <!-- SLIDE 6: Dual Explainability (XAI) -->
@@ -351,7 +351,7 @@ def generate_pdf():
                     </ul>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
         <!-- SLIDE 7: Surrogate Decision Rules -->
@@ -386,7 +386,7 @@ def generate_pdf():
                     </div>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
         <!-- SLIDE 8: Talk-to-Data Engine -->
@@ -422,7 +422,7 @@ def generate_pdf():
                     </ul>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
         <!-- SLIDE 9: User Interface & Features -->
@@ -452,7 +452,7 @@ def generate_pdf():
                     </ul>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
         <!-- SLIDE 10: Deployment & Evaluation Summary -->
@@ -492,13 +492,13 @@ def generate_pdf():
                     <h3>Submission Package</h3>
                     <ul>
                         <li><b>Notebook:</b> <code>notebooks/credit_risk_eda_modeling.ipynb</code> (pre-executed with all charts & tables).</li>
-                        <li><b>Presentation:</b> <code>documents/NeoStats_Credit_Risk.pdf</code>.</li>
+                        <li><b>Presentation:</b> <code>documents/CreditLens_Credit_Risk.pdf</code>.</li>
                         <li><b>Config:</b> <code>.env.example</code> & <code>docker-compose.yml</code>.</li>
                         <li><b>Code:</b> Modular, typed, production architecture in <code>src/</code>.</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-tag">NeoStats AI Assignment | Daniel Paul</div>
+            <div class="footer-tag">CreditLens | Your Name</div>
         </div>
 
     </body>
@@ -507,7 +507,7 @@ def generate_pdf():
 
     out_dir = Path("documents")
     out_dir.mkdir(exist_ok=True, parents=True)
-    pdf_path = out_dir / "NeoStats_Credit_Risk.pdf"
+    pdf_path = out_dir / "CreditLens_Credit_Risk.pdf"
 
     print("Rendering PDF via WeasyPrint...")
     html_doc = weasyprint.HTML(string=html_content)

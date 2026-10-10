@@ -1,5 +1,5 @@
 """
-NeoStats Credit Risk Intelligence Platform
+CreditLens — AI-Powered Credit Risk Intelligence Platform
 Executive Banking Application: Dual-Engine Underwriting, Explainable AI & Autonomous Data Exploration.
 """
 
@@ -23,7 +23,7 @@ import streamlit as st
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("neostats_app")
+logger = logging.getLogger("creditlens_app")
 
 # Synchronize Streamlit Cloud secrets to environment variables if present
 try:
@@ -37,7 +37,7 @@ FAVICON_PATH = Path(__file__).parent / "assets" / "favicon.png"
 page_icon_val = str(FAVICON_PATH) if FAVICON_PATH.exists() else "assets/favicon.png"
 
 st.set_page_config(
-    page_title="NeoStats | Credit Risk Intelligence Platform",
+    page_title="CreditLens | Credit Risk Intelligence Platform",
     page_icon=page_icon_val,
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -120,7 +120,7 @@ div[data-testid="stMetric"] div[data-testid="stMetricDelta"] {
 }
 
 /* Executive Cards */
-.neostats-card {
+.creditlens-card {
     background-color: #0F172A;
     border: 1px solid #1E293B;
     border-radius: 6px;
@@ -128,7 +128,7 @@ div[data-testid="stMetric"] div[data-testid="stMetricDelta"] {
     margin-bottom: 14px;
 }
 
-.neostats-card-header {
+.creditlens-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -137,7 +137,7 @@ div[data-testid="stMetric"] div[data-testid="stMetricDelta"] {
     padding-bottom: 6px;
 }
 
-.neostats-title {
+.creditlens-title {
     font-size: 1.0rem;
     font-weight: 600;
     color: #F8FAFC;
@@ -482,7 +482,7 @@ st.markdown(
     """
     <div class="masthead-container">
         <div>
-            <div class="masthead-title">NeoStats Credit Risk Intelligence Platform</div>
+            <div class="masthead-title">CreditLens | Credit Risk Intelligence Platform</div>
             <div class="masthead-caption">Dual-Engine Underwriting (Glassbox EBM & LightGBM) | FCRA/ECOA Regulatory Compliance | Autonomous Data Exploration</div>
         </div>
         <div>
@@ -792,9 +792,9 @@ with tabs[1]:
         delta_ebm_score = active_results["ebm_score"] - baseline_results["ebm_score"]
         st.markdown(
             f"""
-            <div class="neostats-card">
-                <div class="neostats-card-header">
-                    <span class="neostats-title">Glassbox EBM (GA²M)</span>
+            <div class="creditlens-card">
+                <div class="creditlens-card-header">
+                    <span class="creditlens-title">Glassbox EBM (GA²M)</span>
                     <span class="{active_results['ebm_badge']}">● {active_results['ebm_tier']}</span>
                 </div>
                 <h1 style="margin: 0; color: #38BDF8; font-size: 2.1rem; font-variant-numeric: tabular-nums;">{active_results['ebm_score']}</h1>
@@ -818,9 +818,9 @@ with tabs[1]:
         delta_lgb_score = active_results["lgb_score"] - baseline_results["lgb_score"]
         st.markdown(
             f"""
-            <div class="neostats-card">
-                <div class="neostats-card-header">
-                    <span class="neostats-title">Blackbox LightGBM</span>
+            <div class="creditlens-card">
+                <div class="creditlens-card-header">
+                    <span class="creditlens-title">Blackbox LightGBM</span>
                     <span class="{active_results['lgb_badge']}">● {active_results['lgb_tier']}</span>
                 </div>
                 <h1 style="margin: 0; color: #818CF8; font-size: 2.1rem; font-variant-numeric: tabular-nums;">{active_results['lgb_score']}</h1>
@@ -844,9 +844,9 @@ with tabs[1]:
         delta_el = el_ebm - base_el_ebm
         st.markdown(
             f"""
-            <div class="neostats-card">
-                <div class="neostats-card-header">
-                    <span class="neostats-title">Basel Expected Loss (EL)</span>
+            <div class="creditlens-card">
+                <div class="creditlens-card-header">
+                    <span class="creditlens-title">Basel Expected Loss (EL)</span>
                     <span class="badge-blue">EAD: ${val_credit:,.0f}</span>
                 </div>
                 <h1 style="margin: 0; color: #F59E0B; font-size: 2.1rem; font-variant-numeric: tabular-nums;">${el_ebm:,.0f}</h1>
@@ -1165,7 +1165,7 @@ with tabs[4]:
 with st.sidebar:
     if FAVICON_PATH.exists():
         st.image(str(FAVICON_PATH), width=40)
-    st.markdown("### NeoStats Intelligence")
+    st.markdown("### CreditLens Intelligence")
     st.markdown("**Version:** `2.4.0-PROD`")
 
     st.markdown("<hr style='margin: 10px 0; border-color: #1E293B;'>", unsafe_allow_html=True)

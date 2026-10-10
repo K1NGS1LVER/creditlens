@@ -1,4 +1,4 @@
-# NeoStats Credit Risk Intelligence Platform
+# CreditLens Credit Risk Intelligence Platform
 # Core Dependencies
 python-dotenv>=1.0.0
 numpy>=1.26.0
