@@ -2,7 +2,7 @@ services:
   - type: web
     name: creditlens-credit-risk
     runtime: docker
-    repo: https://github.com/<your-username>/creditlens.git
+    repo: https://github.com/K1NGS1LVER/creditlens.git
     plan: free
     region: oregon
     branch: main

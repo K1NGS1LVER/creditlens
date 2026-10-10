@@ -1,7 +1,11 @@
 # CreditLens — AI-Powered Credit Risk Intelligence Platform
 
-> **Intelligence. Innovation. Impact.**  
-> A generic, company-agnostic proof-of-concept for AI/ML-driven credit underwriting, explainable AI, and autonomous data exploration.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-creditlens--credit--risk.onrender.com-blue?style=flat-square)](https://creditlens-credit-risk.onrender.com)
+[![Test Suite](https://img.shields.io/badge/pytest-44%20passed-emerald?style=flat-square&logo=pytest)](tests)
+[![Python](https://img.shields.io/badge/python-3.11%20%7C%203.14-blue?style=flat-square&logo=python)](requirements.txt)
+[![Dual ML](https://img.shields.io/badge/ML-EBM%20(GA²M)%20%2B%20LightGBM-cyan?style=flat-square)](src/xai/)
+[![Inference Engine](https://img.shields.io/badge/Inference-Live%20%7C%20Offline-purple?style=flat-square)](src/talk_to_data/router.py)
+[![Container](https://img.shields.io/badge/Docker-Multi--Stage%20Hardened-2496ED?style=flat-square&logo=docker)](Dockerfile)
 
 ---
 
@@ -16,6 +20,12 @@ In consumer banking and commercial underwriting, machine learning platforms face
 4. **Autonomous Talk-to-Data Assistant**: Natural language to SQL query engine backed by an in-process **DuckDB** analytical warehouse, protected by an **AST security guardrail**, **token-bucket rate limiter**, **UI debouncer**, and a **4-tier LLM fallback cascade**.
 5. **Progressive Disclosure UI**: An institutional, zero-emoji banking terminal built for underwriters and credit committees, presenting actionable signals first and technical telemetry on demand.
 
+### Live Demo
+
+The platform is deployed and running at: **[https://creditlens-credit-risk.onrender.com](https://creditlens-credit-risk.onrender.com)**
+
+*(Note: If no API key is provided, the platform automatically activates the deterministic fallback tier, guaranteeing all benchmark inquiries run flawlessly with 0 network dependencies.)*
+
 ---
 
 ### Quick Start (Under 60 Seconds)
@@ -24,7 +34,7 @@ In consumer banking and commercial underwriting, machine learning platforms face
 
 ```zsh
 # 1. Clone repository
-git clone https://github.com/<your-username>/creditlens.git
+git clone https://github.com/K1NGS1LVER/creditlens.git
 cd creditlens
 
 # 2. (Optional) Provide LLM API key for live inference
@@ -36,8 +46,6 @@ docker compose up --build
 ```
 
 Access the application at: **`http://localhost:8501`**
-
-*(Note: If no API key is provided, the platform automatically activates the deterministic fallback tier, guaranteeing all benchmark inquiries run flawlessly with 0 network dependencies.)*
 
 #### Option B: Local Python Development
 ```zsh
@@ -57,93 +65,3 @@ streamlit run app.py
 ---
 
 ## 2. End-to-End System Architecture
-
-```mermaid
-graph TD
-    subgraph UI ["Institutional Terminal (Streamlit app.py)"]
-        TAB1["Tab 1: Portfolio Overview (7 Risk Lenses)"]
-        TAB2["Tab 2: Underwriting Simulator & Basel EL"]
-        TAB3["Tab 3: Dual XAI (GA²M & TreeSHAP) + Adverse Action"]
-        TAB4["Tab 4: Surrogate Policy Rules & Cutoff Sandbox"]
-        TAB5["Tab 5: Autonomous Analytics Assistant"]
-    end
-
-    subgraph LLM_GATEWAY ["Resilient LLM Gateway (src/talk_to_data/)"]
-        DEBOUNCE["Debouncer (400ms Lock)"]
-        LRU["LRU Cache (50 Slots / Sub-10ms Hits)"]
-        RATE["Token-Bucket Limiter (30 RPM / 60k TPM)"]
-        
-        ROUTER["4-Tier Cascade Router"]
-        TIER1["Tier 1: Primary LLM Model"]
-        TIER2["Tier 2: Secondary LLM Model"]
-        TIER3["Tier 3: Local Ollama Model"]
-        TIER4["Tier 4: Deterministic Semantic Fallback"]
-    end
-
-    subgraph SECURITY ["Execution & Storage Security"]
-        AST_GUARD["sqlglot AST Guardrail (Blocks DDL/DML & Multi-Statements)"]
-        DUCK["DuckDB Warehouse (data/credit_risk.duckdb)"]
-    end
-
-    subgraph MODELS ["Dual Underwriting Models (artifacts/)"]
-        EBM["Glassbox EBM (GA²M Additive)"]
-        LGBM["Calibrated LightGBM (Isotonic CV=3)"]
-        RULES["Surrogate Underwriting Rules"]
-    end
-
-    TAB5 --> DEBOUNCE --> LRU --> RATE --> ROUTER
-    ROUTER -->|Primary Attempt| TIER1
-    TIER1 -.->|Rate Limit / Timeout| TIER2
-    TIER2 -.->|API Unavailable| TIER3
-    TIER3 -.->|Local Daemon Offline| TIER4
-    ROUTER --> AST_GUARD --> DUCK
-    TAB2 --> EBM & LGBM
-    TAB3 --> EBM & LGBM
-    TAB4 --> RULES
-    TAB1 --> DUCK
-```
-
----
-
-## 3. Automated Test Suite
-
-The platform includes 44 unit and integration tests covering the complete AI engineering stack:
-
-```zsh
-pytest tests/ -v
-```
-
-```
-tests/test_rate_limiter.py::test_rate_limiter_acquisition PASSED
-tests/test_rate_limiter.py::test_rate_limiter_headroom_structure PASSED
-tests/test_rate_limiter.py::test_rate_limiter_retry_helper PASSED
-tests/test_rules.py::test_load_surrogate_rules PASSED
-tests/test_rules.py::test_evaluate_applicant_high_risk PASSED
-tests/test_sql_guardrail.py::test_valid_select_queries PASSED
-tests/test_sql_guardrail.py::test_blocked_dml_ddl_queries PASSED
-tests/test_talk_to_data.py::test_deterministic_matcher_all_5_benchmarks PASSED
-tests/test_xai.py::test_ebm_local_explanation_exactness PASSED
-tests/test_xai.py::test_generate_adverse_action_notice PASSED
-...
-======================= 44 passed in 3.45s =======================
-```
-
----
-
-## 4. Git Repository Management
-
-To push this repository to GitHub:
-
-```zsh
-# 1. Verify you are on the main branch
-git branch
-# * main
-
-# 2. Add remote origin repository
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-
-# 3. Push to main branch
-git push -u origin main
-```
-
-*(Note: `.gitignore` strictly prevents `.env`, test caches, and OS metadata from being pushed, keeping your remote repository clean and secure).*
